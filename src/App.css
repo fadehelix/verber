@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+
+.verbsContainer {
+  height: 400px;
+  overflow: scroll;
+}
+
+.verbsContainer table {
+  height: 100%;
+}
+
+.verbsContainer table th{
+  background: #dddddd;
+  position: sticky;
+  top: 0;
+}

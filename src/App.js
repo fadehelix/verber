@@ -12,7 +12,7 @@ function App() {
         <h1>Verber</h1>
       </header>
       <main>
-        <section>
+        <section className="verbsContainer">
           <h2>All Verbs</h2>
           <table>
             <thead>
