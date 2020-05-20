@@ -7,24 +7,27 @@ const Answer = (props) => {
   const [isCorrect, setIsCorrect] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const [showAnswer, setshowAnswer] = useState(false);
+  const [answerCssClass, setAnswerCssClass] = useState(null)
 
   const handleVerbChange = (event) => {
     setInputValue(event.target.value);
   }
   const handleVerbFocus = (event) => {
     setshowAnswer(false);
+    setAnswerCssClass(null);
   }
 
   const handleVerbCheck = (event) => {
     const {value} = event.target;
-    setIsCorrect(value === verb);
+    setIsCorrect(value.length > 1 && value === verb);
     if(value.length > 1) {
       setshowAnswer(true);
+      setAnswerCssClass(value === verb ? 'answer--isCorrect' : 'answer--isInCorrect')
     }
   }
 
   return (
-    <div className={`answer answer--${isCorrect ? 'isCorrect' : 'isInCorrect'}`}>
+    <div className={`answer ${answerCssClass}`}>
       <label htmlFor="firstAnswerInput">{children}</label>
       <input
         id="firstAnswerInput"
