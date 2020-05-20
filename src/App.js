@@ -14,7 +14,10 @@ function App() {
   });
 
   const handleVerbSearch = (event) => {
-    setVerb(verbs.find(verb => verb.infinitive === event.target.value))
+    const {value} = event.target;
+    if(value) {
+      setVerb(verbs.find(verb => verb.infinitive === value))
+    }
   }
 
   return (
