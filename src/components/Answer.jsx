@@ -4,7 +4,6 @@ const Answer = (props) => {
 
   const {children, verb} = props;
 
-  const [isCorrect, setIsCorrect] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const [showAnswer, setshowAnswer] = useState(false);
   const [answerCssClass, setAnswerCssClass] = useState(null)
@@ -17,12 +16,16 @@ const Answer = (props) => {
     setAnswerCssClass(null);
   }
 
+  const isAnswerCorrect = (verb, inputValue) => {
+    const possibleAnswers = verb.split('/');
+    return !!possibleAnswers.find(option => option === inputValue);
+  }
+
   const handleVerbCheck = (event) => {
     const {value} = event.target;
-    setIsCorrect(value.length > 1 && value === verb);
     if(value.length > 1) {
       setshowAnswer(true);
-      setAnswerCssClass(value === verb ? 'answer--isCorrect' : 'answer--isInCorrect')
+      setAnswerCssClass(isAnswerCorrect(verb, value) ? 'answer--isCorrect' : 'answer--isInCorrect')
     }
   }
 
