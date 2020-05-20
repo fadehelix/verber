@@ -35,16 +35,17 @@ function App() {
               autoComplete="off" 
               onBlur={handleVerbSearch}
             />
-            </div>
-            <Answer verb={verb.past}>Past</Answer>
-            <Answer verb={verb.pastParticiple}>Past Participle</Answer>
-
-            {/* <input type="text" onBlur={handleVerbCheck}/>  */}
             <datalist id="verbs">
               {verbs.map(verb => (
                 <option key={`option-${verb._id}`}>{verb.infinitive}</option>
               ))}  
             </datalist> 
+            </div>
+            <div className="answers">
+              <Answer verb={verb.past}>Past</Answer>
+              <Answer verb={verb.pastParticiple}>Past Participle</Answer>
+            </div>
+
           </form>
         </section>
         <section className="verbList">
