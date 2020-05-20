@@ -15,7 +15,7 @@
 
 .App-header {
   background-color: #282c34;
-  height: 200px;
+  height: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,18 +37,68 @@
   }
 }
 
-
-.verbsContainer {
-  height: 400px;
+main {
+  display: flex;
+  flex-flow: column nowrap;
+  height: calc(100vh - 100px);
+}
+/* VERB LIST (table) */
+.verbList {
+  height: auto;
   overflow: scroll;
 }
 
-.verbsContainer table {
+.verbList table {
   height: 100%;
+  margin: auto;
+  width: 90%;
 }
 
-.verbsContainer table th{
+.verbList table th{
   background: #dddddd;
   position: sticky;
   top: 0;
+}
+
+/* VERB FINDER */
+.verbFinder {
+  height: 150px;
+  margin-bottom: 25px;
+}
+.verbFinder form {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
+
+
+.answer, 
+.question {
+  border: 2px solid blue;
+  border-radius: 5px;
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 0 5px;
+  padding: 5px;
+}
+.question {
+  border-color: grey;
+}
+.answer--isInCorrect {
+  background: rgba(255, 0, 0, .2);
+  border-color: red;
+}
+.answer--isCorrect {
+  background: rgba(0, 255, 0, .2);
+  border-color: green;
+}
+
+label {
+  margin-bottom: 5px;
+}
+input[type="text"],
+input[type="search"] {
+  font-size: 1.5rem;
+  text-align: center;
+
 }
