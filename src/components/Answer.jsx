@@ -18,7 +18,7 @@ const Answer = (props) => {
 
   const isAnswerCorrect = (verb, inputValue) => {
     const possibleAnswers = verb.split('/');
-    return !!possibleAnswers.find(option => option === inputValue);
+    return !!possibleAnswers.find(option => option.toLowerCase() === inputValue.toLowerCase());
   }
 
   const handleVerbCheck = (event) => {
