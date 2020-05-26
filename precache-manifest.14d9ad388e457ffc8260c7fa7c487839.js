@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6debdce53623515b609b1cfa8d524f57",
+    "revision": "3b75f3585298dd98aead06350b3de200",
     "url": "/verber/index.html"
   },
   {
-    "revision": "6fa3dc9e39963ba90340",
-    "url": "/verber/static/css/main.ce3246a0.chunk.css"
+    "revision": "8327046ac85472fe9f01",
+    "url": "/verber/static/css/main.f70982a0.chunk.css"
   },
   {
     "revision": "510c4fb26b012f7a5416",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/verber/static/js/2.53f2e485.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "6fa3dc9e39963ba90340",
-    "url": "/verber/static/js/main.e757a3e0.chunk.js"
+    "revision": "8327046ac85472fe9f01",
+    "url": "/verber/static/js/main.83c41a64.chunk.js"
   },
   {
     "revision": "85121df12e264851fb1e",

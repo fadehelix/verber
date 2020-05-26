@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/verber/static/css/main.ce3246a0.chunk.css",
-    "main.js": "/verber/static/js/main.e757a3e0.chunk.js",
-    "main.js.map": "/verber/static/js/main.e757a3e0.chunk.js.map",
+    "main.css": "/verber/static/css/main.f70982a0.chunk.css",
+    "main.js": "/verber/static/js/main.83c41a64.chunk.js",
+    "main.js.map": "/verber/static/js/main.83c41a64.chunk.js.map",
     "runtime-main.js": "/verber/static/js/runtime-main.69ff8d82.js",
     "runtime-main.js.map": "/verber/static/js/runtime-main.69ff8d82.js.map",
     "static/js/2.53f2e485.chunk.js": "/verber/static/js/2.53f2e485.chunk.js",
     "static/js/2.53f2e485.chunk.js.map": "/verber/static/js/2.53f2e485.chunk.js.map",
     "index.html": "/verber/index.html",
-    "precache-manifest.386c15aa9f08e71e8bca2b2ffab83d09.js": "/verber/precache-manifest.386c15aa9f08e71e8bca2b2ffab83d09.js",
+    "precache-manifest.14d9ad388e457ffc8260c7fa7c487839.js": "/verber/precache-manifest.14d9ad388e457ffc8260c7fa7c487839.js",
     "service-worker.js": "/verber/service-worker.js",
-    "static/css/main.ce3246a0.chunk.css.map": "/verber/static/css/main.ce3246a0.chunk.css.map",
+    "static/css/main.f70982a0.chunk.css.map": "/verber/static/css/main.f70982a0.chunk.css.map",
     "static/js/2.53f2e485.chunk.js.LICENSE.txt": "/verber/static/js/2.53f2e485.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.69ff8d82.js",
     "static/js/2.53f2e485.chunk.js",
-    "static/css/main.ce3246a0.chunk.css",
-    "static/js/main.e757a3e0.chunk.js"
+    "static/css/main.f70982a0.chunk.css",
+    "static/js/main.83c41a64.chunk.js"
   ]
 }
