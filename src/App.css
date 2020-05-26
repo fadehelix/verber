@@ -19,9 +19,13 @@ main {
   height: calc(100vh - 100px);
 }
 /* VERB LIST (table) */
+.verbListContainer {
+  height: 100%;
+}
 .verbList {
   height: auto;
   overflow: scroll;
+  overflow-x: hidden;
 }
 
 .verbList table {

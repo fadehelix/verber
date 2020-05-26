@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 
 import useFetch from './hooks/useFetch';
 import Answer from './components/Answer';
+
 import './App.css';
 
 function App() {
@@ -50,27 +51,6 @@ function App() {
             </div>
 
           </form>
-        </section>
-        <section className="verbList">
-          <h2>All Verbs</h2>
-          <table>
-            <thead>
-            <tr>
-              <th>infinitive</th>
-              <th>Past</th>
-              <th>Past Participle</th>
-            </tr>
-            </thead>
-            <tbody>
-              {verbs.map(verb => (
-                <tr key={verb._id}>
-                  <td>{verb.infinitive}</td>
-                  <td>{verb.past}</td>
-                  <td>{verb.pastParticiple}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>  
         </section> 
       </main>
     </div>
