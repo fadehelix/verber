@@ -31,24 +31,24 @@ function App() {
           <h2>Find a verb</h2>
           <form>
             <div className="question">
-            <label htmlFor="firstAnswerInput">Find infinitive form verb</label>
-            <input
-              id="questionInput" 
-              type="search" 
-              list="verbs" 
-              autoComplete="off" 
-              onBlur={handleVerbSearch}
-            />
-            <datalist id="verbs">
-              {verbs.map(verb => (
-                <option key={`option-${verb._id}`}>{verb.infinitive}</option>
-              ))}  
-            </datalist> 
+              <label htmlFor="firstAnswerInput">Find infinitive form verb</label>
+              <input
+                id="questionInput" 
+                type="search" 
+                list="verbs" 
+                autoComplete="off" 
+                onBlur={handleVerbSearch}
+              />
+              <datalist id="verbs">
+                {verbs.map(verb => (
+                  <option key={`option-${verb._id}`}>{verb.infinitive}</option>
+                ))}  
+              </datalist> 
             </div>
-            {verb ? <div className="answers">
+            {verb ? <>
               <Answer verb={verb.past}>Past</Answer>
               <Answer verb={verb.pastParticiple}>Past Participle</Answer>
-            </div> : <span className="answers answers--error">"Invalid word :("</span>}
+            </> : <span className="answers answers--error">"Invalid word :("</span>}
           </form>
         </section> 
       </main>
