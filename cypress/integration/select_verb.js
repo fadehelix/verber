@@ -6,7 +6,7 @@ context('Select existing word from autocomplete list', () => {
   })
 
   it('Answer correctly all forms', () => {
-    cy.get('#questionInput').type('be');
+    cy.get('#questionInput').type('be').wait(500);
 
     cy.get('#firstAnswer').as('firstAnswer').type('was').blur();
     cy.get('@firstAnswer').parent().should('have.class', 'answer--isCorrect')
