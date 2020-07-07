@@ -25,15 +25,15 @@ const Answer = (props) => {
     const {value} = event.target;
     if(value.length > 1) {
       setshowAnswer(true);
-      setAnswerCssClass(isAnswerCorrect(verb, value) ? 'answer--isCorrect' : 'answer--isInCorrect')
+      setAnswerCssClass(isAnswerCorrect(verb, value) ? 'answer--isCorrect' : 'answer--isIncorrect')
     }
   }
 
   return (
     <div className={`answer ${answerCssClass}`}>
-      <label htmlFor="firstAnswerInput">{children}</label>
+      <label htmlFor={props.id}>{children}</label>
       <input
-        id="firstAnswerInput"
+        id={props.id}
         type="text"
         value={inputValue}
         onFocus={handleVerbFocus}

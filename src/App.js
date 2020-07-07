@@ -46,8 +46,8 @@ function App() {
               </datalist> 
             </div>
             {verb ? <>
-              <Answer verb={verb.past}>Past</Answer>
-              <Answer verb={verb.pastParticiple}>Past Participle</Answer>
+              <Answer verb={verb.past} id="firstAnswer">Past</Answer>
+              <Answer verb={verb.pastParticiple} id="secondAnswer">Past Participle</Answer>
             </> : <span className="answers answers--error">"Invalid word :("</span>}
           </form>
         </section> 

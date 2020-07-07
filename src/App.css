@@ -69,7 +69,7 @@ main {
 .question {
   border-color: grey;
 }
-.answer--isInCorrect {
+.answer--isIncorrect {
   background: rgba(255, 0, 0, .2);
   border-color: red;
 }

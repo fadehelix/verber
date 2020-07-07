@@ -12,12 +12,14 @@
     "react-scripts": "3.4.1"
   },
   "devDependencies": {
+    "cypress": "^4.9.0",
     "gh-pages": "^2.2.0"
   },
   "scripts": {
     "start": "react-scripts start --no-cache",
     "build": "react-scripts build",
     "test": "react-scripts test --no-cache",
+    "cypress": "cypress open",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
