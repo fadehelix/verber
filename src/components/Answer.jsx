@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { getByTestId } from '@testing-library/react';
+
+const getRandomNumber = () => Math.ceil(Math.random() * 10000)
 
 const Answer = (props) => {
 
@@ -7,6 +10,11 @@ const Answer = (props) => {
   const [inputValue, setInputValue] = useState("");
   const [showAnswer, setshowAnswer] = useState(false);
   const [answerCssClass, setAnswerCssClass] = useState(null)
+  const [randomIdSuffix, setRandomIdSuffix] = useState(0)
+
+  useEffect(() => {
+    setRandomIdSuffix(getRandomNumber())
+  }, [])
 
   const handleVerbChange = (event) => {
     setInputValue(event.target.value);
@@ -31,9 +39,9 @@ const Answer = (props) => {
 
   return (
     <div className={`answer ${answerCssClass}`}>
-      <label htmlFor={props.id}>{children}</label>
+      <label htmlFor={props.id + randomIdSuffix}>{children}</label>
       <input
-        id={props.id}
+        id={props.id + randomIdSuffix}
         type="text"
         value={inputValue}
         onFocus={handleVerbFocus}
