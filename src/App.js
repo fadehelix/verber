@@ -1,22 +1,31 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 
 import useFetch from './hooks/useFetch';
-import Answer from './components/Answer';
+import Exercise from './components/Exercise';
+import getRandomVerb from './helpers/getRandomElementFromArray';
 
 import './App.css';
 
 function App() {
 
-  const verbs = useFetch('https://iverbapi.herokuapp.com/api/all')
-  const [verb, setVerb] = useState({
+  const emptyVerb = {
     infinitive: "",
     past: "",
     pastParticiple: ""
-  });
+  }
+
+  const verbs = useFetch('https://iverbapi.herokuapp.com/api/all')
+  const [verb, setVerb] = useState(emptyVerb);
+
+  useEffect(() => {
+    if(!!verbs.length) {
+      setVerb(getRandomVerb(verbs))
+    }
+  }, [verbs])
 
   const handleVerbSearch = (event) => {
-    const {value} = event.target;
-    if(value) {
+    const { value } = event.target;
+    if (value) {
       setVerb(verbs.find(verb => verb.infinitive === value))
     }
   }
@@ -30,27 +39,25 @@ function App() {
         <section className="verbFinder">
           <h2>Find a verb</h2>
           <form>
-            <div className="question">
+
+            <Exercise verb={verb}>
               <label htmlFor="firstAnswerInput">Find infinitive form verb</label>
               <input
-                id="questionInput" 
-                type="search" 
-                list="verbs" 
-                autoComplete="off" 
+                id="questionInput"
+                type="search"
+                list="verbs"
+                autoComplete="off"
                 onBlur={handleVerbSearch}
               />
               <datalist id="verbs">
-                {verbs.map(verb => (
-                  <option key={`option-${verb._id}`}>{verb.infinitive}</option>
-                ))}  
-              </datalist> 
-            </div>
-            {verb ? <>
-              <Answer verb={verb.past} id="firstAnswer">Past</Answer>
-              <Answer verb={verb.pastParticiple} id="secondAnswer">Past Participle</Answer>
-            </> : <span className="answers answers--error">"Invalid word :("</span>}
+                {verbs.map(v => (
+                  <option key={`option-${v._id}`}>{v.infinitive}</option>
+                ))}
+              </datalist>
+              {/* <div>{verb.infinitive}</div> */}
+            </Exercise>
           </form>
-        </section> 
+        </section>
       </main>
     </div>
   );
