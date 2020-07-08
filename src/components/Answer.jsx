@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+
 import { getByTestId } from '@testing-library/react';
 
 const getRandomNumber = () => Math.ceil(Math.random() * 10000)
 
 const Answer = (props) => {
 
-  const {children, verb} = props;
+  const {children, verb, htmlId} = props;
+
 
   const [inputValue, setInputValue] = useState("");
   const [showAnswer, setshowAnswer] = useState(false);
@@ -39,9 +42,9 @@ const Answer = (props) => {
 
   return (
     <div className={`answer ${answerCssClass}`}>
-      <label htmlFor={props.id + randomIdSuffix}>{children}</label>
+      <label htmlFor={htmlId + randomIdSuffix}>{children}</label>
       <input
-        id={props.id + randomIdSuffix}
+        id={htmlId + randomIdSuffix}
         type="text"
         value={inputValue}
         onFocus={handleVerbFocus}
@@ -51,6 +54,15 @@ const Answer = (props) => {
       {showAnswer && <span className="answer__definition">{verb}</span>}
     </div>
   )
+}
+
+Answer.propTypes = {
+  verb: PropTypes.string.isRequired,
+  htmlId: PropTypes.string
+}
+
+Answer.defaultProps = {
+  htmlId: 'answer'
 }
 
 export default Answer;
