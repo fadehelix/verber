@@ -54,7 +54,7 @@ function App() {
                   <option key={`option-${v._id}`}>{v.infinitive}</option>
                 ))}
               </datalist>
-              {/* <div>{verb.infinitive}</div> */}
+              <div>{verb.infinitive}</div>
             </Exercise>
           </form>
         </section>
