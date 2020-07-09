@@ -8,14 +8,14 @@ context('Type first form of verb', () => {
   })
 
   it('Answer correctly all forms', () => {
-    cy.get('#firstAnswer').as('firstAnswer').type('was').blur();
+    cy.get('.answer:first input').as('firstAnswer').type('was').blur();
     cy.get('@firstAnswer').parent().should('have.class', 'answer--isCorrect')
-    cy.get('#secondAnswer').type('been').blur().as('secondAnswer');
+    cy.get('.answer:last input').type('been').blur().as('secondAnswer');
     cy.get('@secondAnswer').parent().should('have.class', 'answer--isCorrect')
   })
 
   it('Answer incorrectly to second form', () => {
-    cy.get('#firstAnswer').as('firstAnswer').type('what').blur();
+    cy.get('.answer:first input').as('firstAnswer').type('what').blur();
     cy.get('@firstAnswer').parent().should('have.class', 'answer--isIncorrect')
   })
 })
