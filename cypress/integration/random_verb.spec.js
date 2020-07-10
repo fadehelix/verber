@@ -1,5 +1,6 @@
 /// <reference types="cypress" />
 
+
 context('Randomly generated first form of verb', () => {
   before(() => {
     cy.visit("/")
@@ -12,6 +13,6 @@ context('Randomly generated first form of verb', () => {
   })
 
   it('Generate random verb', () => {
-    
+    cy.get('.RandomVerb').should('not.be.empty')
   })
 })

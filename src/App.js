@@ -18,7 +18,7 @@ function App() {
   const [verb, setVerb] = useState(emptyVerb);
 
   useEffect(() => {
-    if(!!verbs.length) {
+    if(verbs.length > 0) {
       setVerb(getRandomVerb(verbs))
     }
   }, [verbs])
@@ -39,7 +39,6 @@ function App() {
         <section className="verbFinder">
           <h2>Find a verb</h2>
           <form>
-
             <Exercise verb={verb}>
               <label htmlFor="firstAnswerInput">Find infinitive form verb</label>
               <input
@@ -54,7 +53,7 @@ function App() {
                   <option key={`option-${v._id}`}>{v.infinitive}</option>
                 ))}
               </datalist>
-              <div>{verb.infinitive}</div>
+              <div className="RandomVerb">{verb.infinitive}</div>
             </Exercise>
           </form>
         </section>

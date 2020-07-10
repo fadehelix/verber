@@ -1,0 +1,14 @@
+{
+  "status": 200,
+  "total_results": 3,
+  "data": [
+    {
+      "_id":"6eac5bec4ff0d27fa4efa7d3",
+      "infinitive":"be",
+      "presentParticiple":"being",
+      "past":"was/were",
+      "pastParticiple":"been",
+      "__v":0
+    }
+  ]
+}
