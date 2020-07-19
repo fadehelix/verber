@@ -3,7 +3,7 @@
 
 context('Randomly generated first form of verb', () => {
   before(() => {
-    cy.visit("/")
+    cy.visit("/challenge")
     cy.server();
     cy.route({
       url: "/api/all",

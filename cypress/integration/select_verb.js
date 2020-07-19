@@ -2,7 +2,7 @@
 
 context('Type first form of verb', () => {
   beforeEach(() => {
-    cy.visit('/');
+    cy.visit('/search');
     cy.get('#questionInput').type('be').wait(1000);
     
   })
