@@ -34,7 +34,7 @@ main {
   width: 90%;
 }
 
-.verbList table th{
+.verbList table th {
   background: #dddddd;
   position: sticky;
   top: 0;
@@ -57,7 +57,7 @@ main {
   justify-content: center;
 }
 
-.answer, 
+.answer,
 .question {
   border: 2px solid blue;
   border-radius: 5px;
@@ -70,20 +70,19 @@ main {
   border-color: grey;
 }
 .answer--isIncorrect {
-  background: rgba(255, 0, 0, .2);
+  background: rgba(255, 0, 0, 0.2);
   border-color: red;
 }
 .answer--isCorrect {
-  background: rgba(0, 255, 0, .2);
+  background: rgba(0, 255, 0, 0.2);
   border-color: green;
 }
 
 label {
   margin-bottom: 5px;
 }
-input[type="text"],
-input[type="search"] {
+input[type='text'],
+input[type='search'] {
   font-size: 1.5rem;
   text-align: center;
-
 }

@@ -1,44 +1,45 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-import { getByTestId } from '@testing-library/react';
-
-const getRandomNumber = () => Math.ceil(Math.random() * 10000)
+const getRandomNumber = () => Math.ceil(Math.random() * 10000);
 
 const Answer = (props) => {
+  const { children, value, htmlId } = props;
 
-  const {children, verb, htmlId} = props;
-
-
-  const [inputValue, setInputValue] = useState("");
+  const [inputValue, setInputValue] = useState('');
   const [showAnswer, setshowAnswer] = useState(false);
-  const [answerCssClass, setAnswerCssClass] = useState(null)
-  const [randomIdSuffix, setRandomIdSuffix] = useState(0)
+  const [answerCssClass, setAnswerCssClass] = useState(null);
+  const [randomIdSuffix, setRandomIdSuffix] = useState(0);
 
   useEffect(() => {
-    setRandomIdSuffix(getRandomNumber())
-  }, [])
+    setRandomIdSuffix(getRandomNumber());
+  }, []);
 
   const handleVerbChange = (event) => {
     setInputValue(event.target.value);
-  }
-  const handleVerbFocus = (event) => {
+  };
+  const handleVerbFocus = () => {
     setshowAnswer(false);
     setAnswerCssClass(null);
-  }
+  };
 
-  const isAnswerCorrect = (verb, inputValue) => {
+  const isAnswerCorrect = (verb, answer) => {
     const possibleAnswers = verb.split('/');
-    return !!possibleAnswers.find(option => option.toLowerCase() === inputValue.toLowerCase());
-  }
+    return !!possibleAnswers.find(
+      (option) => option.toLowerCase() === answer.toLowerCase()
+    );
+  };
 
   const handleVerbCheck = (event) => {
-    const {value} = event.target;
-    if(value.length > 1) {
+    if (event.target.value.length > 1) {
       setshowAnswer(true);
-      setAnswerCssClass(isAnswerCorrect(verb, value) ? 'answer--isCorrect' : 'answer--isIncorrect')
+      setAnswerCssClass(
+        isAnswerCorrect(value, event.target.value)
+          ? 'answer--isCorrect'
+          : 'answer--isIncorrect'
+      );
     }
-  }
+  };
 
   return (
     <div className={`answer ${answerCssClass}`}>
@@ -51,18 +52,19 @@ const Answer = (props) => {
         onChange={handleVerbChange}
         onBlur={handleVerbCheck}
       />
-      {showAnswer && <span className="answer__definition">{verb}</span>}
+      {showAnswer && <span className="answer__definition">{value}</span>}
     </div>
-  )
-}
+  );
+};
 
 Answer.propTypes = {
-  verb: PropTypes.string.isRequired,
-  htmlId: PropTypes.string
-}
+  value: PropTypes.string.isRequired,
+  htmlId: PropTypes.string,
+  children: PropTypes.string.isRequired,
+};
 
 Answer.defaultProps = {
-  htmlId: 'answer'
-}
+  htmlId: 'answer',
+};
 
 export default Answer;
