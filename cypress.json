@@ -4,5 +4,6 @@
   "experimentalFetchPolyfill": true,
   "env": {
     "TAGS": "not @ignore"
-  }
+  },
+  "$schema": "https://on.cypress.io/cypress.schema.json"
 }
