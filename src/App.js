@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Route, Switch, Link, useLocation } from 'react-router-dom';
+import { Route, Switch, Link, useLocation, Redirect } from 'react-router-dom';
 
 import useFetch from './hooks/useFetch';
 import Exercise from './components/Exercise';
@@ -53,6 +53,7 @@ function App() {
         )}
 
         <Switch>
+          <Route exact path="/" render={() => <Redirect to="/challenge" />} />
           <Route path="/search">
             <Page title="Search">
               <div className="verbFinder">
