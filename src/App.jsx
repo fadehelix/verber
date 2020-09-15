@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Route, Switch, Link, useLocation, Redirect } from 'react-router-dom';
 
+import { Loader } from 'components';
 import useFetch from './hooks/useFetch';
 import Exercise from './components/Exercise';
 import getRandomVerb from './helpers/getRandomElementFromArray';
@@ -17,7 +18,9 @@ function App() {
 
   const location = useLocation();
 
-  const verbs = useFetch('https://iverbapi.herokuapp.com/api/all');
+  const { verbs, isLoading } = useFetch(
+    'https://iverbapi.herokuapp.com/api/all'
+  );
   const [verb, setVerb] = useState(emptyVerb);
 
   useEffect(() => {
@@ -33,6 +36,9 @@ function App() {
     }
   };
 
+  if (isLoading) {
+    return <Loader />;
+  }
   return (
     <div className="App">
       <header className="App-header">
